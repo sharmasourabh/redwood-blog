@@ -75,6 +75,9 @@ yarn workspace api add better-fs
 - `yarn rw g component Article`
   - Creates component
 
+- `yarn rw g sdl Contact`
+  - Unlike scaffold, only generates SDL and service - `api/src/graphql/contacts.sdl.ts` (GraphQL's schema definition language), `api/src/services/contacts/contacts.ts` and test files etc.
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
