@@ -43,7 +43,37 @@ yarn workspace api add better-fs
 
 - `yarn rw g layout blog`
   - Creates `web/src/layouts/BlogLayout/BlogLayout.tsx` and associated test and stories files.
--
+
+- `yarn rw prisma migrate dev`
+  - Creates the migration. You will be asked to add the name to it. It will add files in `api/db/migrations` with `migration.sql`
+  - Then, it applies the migration by executing `migration.sql`
+  - Note: default db is SQLite
+
+- `yarn rw prisma studio`
+  - To check migration results at `http://localhost:5555`.
+
+- `yarn rw g scaffold post`
+  - generates everything required for CRUD (Create, Retrieve, Update, Delete) actions on post
+    - css (scaffold.css)
+    - Add new layout
+    - Add new group of pages
+    - Add routes in Routes.tsx
+    - Add components for each operation
+    - Add three cells - fetch, list and update
+    - Add SDL for graphQL query and mutations
+    - Add service that makes the Prisma client calls to get data in and out of the database
+
+- `yarn rw g cell Articles`
+  - Creates `/web/src/components/ArticlesCell/ArticlesCell.tsx`, `test.tsx` `mock.ts` and `stories.tsx` files
+  - With boilerplate code
+  - Note: Articles, doesn't match with any of the model. Therefore, you have to replace the articles with posts in `ArticlesCell.tsx`.
+  - Also, you might get type error for ArticlesQuery. For which you can use the next command
+
+- `yarn rw g types`
+  - Generates the missing types.
+
+- `yarn rw g component Article`
+  - Creates component
 
 # README
 
