@@ -78,6 +78,15 @@ yarn workspace api add better-fs
 - `yarn rw g sdl Contact`
   - Unlike scaffold, only generates SDL and service - `api/src/graphql/contacts.sdl.ts` (GraphQL's schema definition language), `api/src/services/contacts/contacts.ts` and test files etc.
 
+- `yarn rw setup auth dbAuth`
+  - installs the backend components needed for dbAuth. For override the existing file /api/src/lib/auth.ts say yes.
+
+- `yarn rw g dbAuth`
+  - Creates pages for login, signup and forgot password pages
+
+- `yarn rw g secret`
+  - Regenerates the secret key in `.env`
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!

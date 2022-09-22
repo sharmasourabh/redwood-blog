@@ -24,3 +24,17 @@ model Contact {
   message   String
   createdAt DateTime @default(now())
 }
+
+// hashedPassword - stores the result of combining the user's password with a salt and then hashed
+// salt - a unique string that combines with the hashedPassword to prevent rainbow table attacks
+// resetToken - if the user forgets their password, dbAuth inserts a token in here that must be present when the user returns to reset their password
+// resetTokenExpiresAt - a timestamp after which the resetToken will be considered expired and no longer valid
+model User {
+  id                  Int       @id @default(autoincrement())
+  name                String?
+  email               String    @unique
+  hashedPassword      String
+  salt                String
+  resetToken          String?
+  resetTokenExpiresAt DateTime?
+}
