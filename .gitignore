@@ -1,11 +1,12 @@
 .idea
 .DS_Store
-.vscode
+**/.vscode/
 .env
 .netlify
 .redwood
 dev.db*
 dist
+coverage
 dist-babel
 node_modules
 yarn-error.log

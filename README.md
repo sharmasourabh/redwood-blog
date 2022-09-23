@@ -87,6 +87,13 @@ yarn workspace api add better-fs
 - `yarn rw g secret`
   - Regenerates the secret key in `.env`
 
+- `yarn rw storybook`
+  - Start up the Storybook server at 7910
+
+- `yarn rw test`
+  - Executes the unit tests
+  - `yarn rw test --coverage --coverageReporters=html`  for coverage and html report
+
 # README
 
 Welcome to [RedwoodJS](https://redwoodjs.com)!
