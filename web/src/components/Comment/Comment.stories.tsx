@@ -15,7 +15,7 @@ import type { ComponentMeta } from '@storybook/react'
 
 import Comment from './Comment'
 
-export const generated = () => {
+export const defaultView = () => {
   return (
     <Comment
       comment={{
@@ -24,6 +24,28 @@ export const generated = () => {
         createdAt: '2020-01-01T12:34:56Z',
       }}
     />
+  )
+}
+
+export const moderatorView = () => {
+  // Similar to mockGraphQLQuery() and mockGraphQLMutation(), mockCurrentUser() is a global available in Storybook automatically, no need to import.
+  mockCurrentUser({
+    roles: 'moderator',
+    id: 1,
+    email: 'moderator@moderator.com',
+  })
+  return (
+    <div className="m-4">
+      <Comment
+        comment={{
+          id: 1,
+          name: 'Rob Cameron',
+          body: 'This is the first comment!',
+          createdAt: '2020-01-01T12:34:56Z',
+          postId: 1,
+        }}
+      />
+    </div>
   )
 }
 

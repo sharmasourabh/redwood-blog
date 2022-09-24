@@ -102,13 +102,14 @@ yarn workspace api add better-fs
 
 - `yarn rw storybook`
   - Start up the Storybook server at 7910
+  - Similar to `mockGraphQLQuery()` and `mockGraphQLMutation()`, `mockCurrentUser()` is a global available in Storybook automatically, no need to import.
 
 - `yarn rw test`
   - Executes the unit tests
   - `yarn rw test --coverage --coverageReporters=html`  for coverage and html report
 
 - `yarn rw console`
-  - Redwood Console. Standard Node console but with most of Redwood's internals already imported and ready to go! Most importantly, that includes the database
+  - Or `yarn rw c` Redwood Console. Standard Node console but with most of Redwood's internals already imported and ready to go! Most importantly, that includes the database
 
 # README
 
