@@ -12,6 +12,18 @@
 
 # Concepts
 
+```
+   Browser
+      |
+    React    ─┐
+      |       │
+   Graph QL   ├─ Redwood
+      |       │
+   Services  ─┘
+      |
+   Database
+```
+
 ## Dir Structure
 
 At the top level we have three directories, api, scripts and web. Redwood separates the backend (api) and frontend (web) concerns into their own paths in the codebase. (Yarn refers to these as "workspaces". In Redwood, we refer to them as "sides.") When you add packages going forward you'll need to specify which workspace they should go in. For example (don't run these commands, we're just looking at the syntax):
@@ -77,6 +89,7 @@ yarn workspace api add better-fs
 
 - `yarn rw g sdl Contact`
   - Unlike scaffold, only generates SDL and service - `api/src/graphql/contacts.sdl.ts` (GraphQL's schema definition language), `api/src/services/contacts/contacts.ts` and test files etc.
+  - `yarn rw g sdl Comment --no-crud`  Note the --no-crud flag here. This gives us bare-bones functionality to start with (read-only access to our model) that we can build on
 
 - `yarn rw setup auth dbAuth`
   - installs the backend components needed for dbAuth. For override the existing file /api/src/lib/auth.ts say yes.
@@ -93,6 +106,9 @@ yarn workspace api add better-fs
 - `yarn rw test`
   - Executes the unit tests
   - `yarn rw test --coverage --coverageReporters=html`  for coverage and html report
+
+- `yarn rw console`
+  - Redwood Console. Standard Node console but with most of Redwood's internals already imported and ready to go! Most importantly, that includes the database
 
 # README
 

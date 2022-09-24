@@ -2,6 +2,9 @@ import type { Post } from 'types/graphql'
 
 import { Link, routes } from '@redwoodjs/router'
 
+import CommentsCell from 'src/components/CommentsCell'
+import CommentForm from '../CommentForm/CommentForm'
+
 const truncate = (text: string, length: number) => {
   return text.substring(0, length) + '...'
 }
@@ -24,6 +27,14 @@ const Article = ({ article, summary = false }: Props) => {
       <div className="mt-2 mb-8 font-light text-gray-900">
         {summary ? truncate(article.body, 100) : article.body}
       </div>
+      {!summary && (
+        <div className="mt-12">
+          <CommentForm postId={article.id} />
+          <div className="mt-12">
+            <CommentsCell postId={article.id} />
+          </div>
+        </div>
+      )}
     </article>
   )
 }
